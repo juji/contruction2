@@ -3,9 +3,9 @@ import Ball from './ball'
 import { registerEvents } from './events'
 
 const canvas = document.querySelector('canvas')
-const body = document.querySelector('body')
+const main = document.querySelector('main')
 
-if(canvas && body) {
+if(canvas && main) {
 
   let ball = new Ball(canvas,{
     width: window.innerWidth,
@@ -14,7 +14,7 @@ if(canvas && body) {
 
   registerEvents(
     ball,
-    body
+    main
   )
 
   window.addEventListener('resize', () => {
