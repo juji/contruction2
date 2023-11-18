@@ -1,0 +1,141 @@
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --logo-fg: #fff;
+  --logo-bg: #000;
+}
+
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+* {
+  scrollbar-color: #333 rgba(0,0,0,0);
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  /* background-color: rgba(0, 0, 0, 0); */
+}
+ 
+*::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+ 
+*::-webkit-scrollbar-thumb {
+  background-color: #333;
+}
+
+body,html{
+  height: 100%;
+  margin:0;
+  padding:0;
+}
+
+#app{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1 1 auto;
+  position: relative;
+  z-index: 2;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  transition: padding 200ms ease-out;
+
+  & .logo{
+    margin: 3rem 0;
+  }
+
+  & h1{
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 1rem;
+  }
+
+  & h2{
+    font-weight: normal;
+    padding: 0;
+    line-height: 1.6rem;
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+  }
+
+}
+
+@media screen and (min-width: 281px){
+  main {
+    padding: 3rem;
+  }
+}
+
+@media screen and (min-width: 313px){
+  main {
+    padding: 4rem;
+  }
+}
+
+@media screen and (min-width: 345px){
+  main {
+    padding: 5rem;
+  }
+}
+
+@media screen and (min-width: 428px){
+  main {
+    padding: 6rem;
+  }
+}
+
+a{
+  color: #74b9ff;
+  text-decoration: none;
+  position: relative;
+
+  &:after{
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    content: " ";
+    display: inline-block;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+    width: 100%;
+    height: 1px;
+    transition: transform .2s ease;
+    transform: scaleX(0);
+    transform-origin: center center;
+  }
+
+  &:hover:after{
+    transform: scaleX(1);
+  }
+
+}
+
+canvas{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+
