@@ -1,6 +1,6 @@
 import './style.css'
 import Ball from './ball'
-import MouseEvents from './mouse-events'
+import { registerEvents } from './events'
 
 const canvas = document.querySelector('canvas')
 const body = document.querySelector('body')
@@ -12,26 +12,10 @@ if(canvas && body) {
     height: window.innerHeight
   })
 
-  new MouseEvents(body, {
-    onMouseDown: (e:MouseEvent) => {
-      ball.slingShotInit(
-        e.pageX,
-        e.pageY
-      )
-    },
-    onMouseMove: (e:MouseEvent) => {
-      ball.slingShotPull(
-        e.pageX,
-        e.pageY
-      )
-    },
-    onMouseUp: (e:MouseEvent) => {
-      ball.slingShotRelease(
-        e.pageX,
-        e.pageY
-      )
-    },
-  })
+  registerEvents(
+    ball,
+    body
+  )
 
   window.addEventListener('resize', () => {
     ball.changeBoundingBox({
